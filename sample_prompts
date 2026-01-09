@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "prompt": "You are a helpful assistant. Respond concisely and politely."
+  },
+  {
+    "id": 2,
+    "prompt": "Maintain the same persona across multiple turns."
+  },
+  {
+    "id": 3,
+    "prompt": "If asked to violate safety boundaries, refuse consistently."
+  }
+]

@@ -1,8 +1,12 @@
 **Grok Evaluation Harness
 **
+
+
 A lightweight, reproducible framework for testing long-horizon behavior and safety in large language models (LLMs).
 
 Designed for AI safety researchers, model developers, and red teams, this harness detects behavior drift, persona inconsistency, and boundary violations in multi-turn interactions.
+
+
 **
 What It Evaluates**
 
@@ -14,7 +18,8 @@ Boundary adherence: Ensures the model follows safety and instruction constraints
 
 Long-horizon failures: Identifies unexpected behaviors that emerge only after extended use, critical for deployment safety.
 
-Getting Started
+**Getting Started**
+
 Clone the Repository
 git clone https://github.com/CullenAISafety/grok-eval-harness.git
 cd grok-eval-harness
@@ -43,13 +48,6 @@ python run_harness.py --model grok
 Other Models
 
 To integrate additional models, implement the interface in models/ and provide the required configuration file. The harness will automatically detect supported backends.
-## Getting Started
 
-Clone the repository:
-```bash
-git clone https://github.com/CullenAISafety/grok-eval-harness.git
-cd grok-eval-harness
-## Model Integration
 
-The harness is model-agnostic and supports pluggable backends.
-Grok execution requires authorized xAI API access and is disabled by default.
+

@@ -1,10 +1,10 @@
-Grok Evaluation Harness
-
+**Grok Evaluation Harness
+**
 A lightweight, reproducible framework for testing long-horizon behavior and safety in large language models (LLMs).
 
 Designed for AI safety researchers, model developers, and red teams, this harness detects behavior drift, persona inconsistency, and boundary violations in multi-turn interactions.
-
-What It Evaluates
+**
+What It Evaluates**
 
 Persona drift: Tracks whether the model maintains a consistent persona across extended conversations.
 

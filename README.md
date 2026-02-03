@@ -1,53 +1,104 @@
-**Grok Evaluation Harness
+**Grok Evaluation Harness**
+
+A lightweight, reproducible evaluation framework for stress-testing long-horizon behavior, safety boundaries, and instruction reliability in large language models.
+
+Built for AI safety research, red-team testing, and deployment readiness.
+
+This harness focuses on system-level behavior over extended interactions, not single-prompt benchmarks.
+
+**Why this exists**
+
+Many LLM failures only emerge after sustained use:
+
+  -persona/identity drift
+  
+  -instruction conflicts
+  
+  -boundary violations
+  
+  -degraded reasoning across long contexts
+  
+  -Traditional prompt tests miss these.
+
+This harness makes those failures measurable, repeatable, and comparable across runs.
+
+**What it evaluates**
+
+  -Persona drift — consistency of identity across sessions
+  
+  -Conversation drift — coherence over multi-turn interactions
+  
+  -Boundary adherence — compliance with safety and policy constraints
+  
+  -Long-horizon failures — behaviors that appear only after extended usage
+  
+  -Behavioral reproducibility — repeatable failure detection
+
+**Features
 **
+Pluggable model backends (Grok + extensible adapters)
+
+  -Structured logging
+  
+  -Reproducible test suites
+  
+  -Config-driven evaluation runs
+  
+  -Failure categorization
+  
+  -Session-level metrics
 
 
-A lightweight, reproducible framework for testing long-horizon behavior and safety in large language models (LLMs).
 
-Designed for AI safety researchers, model developers, and red teams, this harness detects behavior drift, persona inconsistency, and boundary violations in multi-turn interactions.
-
-
-**
-What It Evaluates**
-
-Persona drift: Tracks whether the model maintains a consistent persona across extended conversations.
-
-Conversation drift: Measures coherence and relevance over multi-turn interactions.
-
-Boundary adherence: Ensures the model follows safety and instruction constraints, even under adversarial prompts.
-
-Long-horizon failures: Identifies unexpected behaviors that emerge only after extended use, critical for deployment safety.
-
-**Getting Started**
-
-Clone the Repository
+**QUICK START**
 git clone https://github.com/CullenAISafety/grok-eval-harness.git
 cd grok-eval-harness
 
-Install Dependencies
+
+**INSTAL**
 pip install -r requirements.txt
 
-Run Example Evaluation
+**RUN EXAMPLE**
 python run_harness.py --model <MODEL_NAME> --config configs/example.yaml
 
-Model Integration
 
-The harness supports pluggable backends for multiple LLMs.
+**EXAMPLE OUTPUT**
+Session: 12
+Persona Drift Score: 0.42 (⚠ elevated)
+Instruction Violations: 3
+Boundary Failures: 1
+Long-horizon instability detected after turn 37
 
-Grok
+**ARCHITECTURE**
+Test Suites → Harness → Model Backend → Logs → Metrics → Reports
 
-Grok execution requires authorized xAI API access. Set your API key as an environment variable:
+The harness treats models as black-box systems and evaluates observable behavior without requiring internal access.
+
+**Model Integration
+Grok**
+
+Requires authorized xAI API access:
 
 export XAI_API_KEY="your_api_key_here"
-
-
-Enable Grok evaluation:
-
 python run_harness.py --model grok
 
-Other Models
+**Additional Models**
 
-To integrate additional models, implement the interface in models/ and provide the required configuration file. The harness will automatically detect supported backends.
+Implement the interface in models/ and provide a configuration file. Backends are automatically detected.
 
+Intended Use
 
+  -Safety evaluation
 
+  -Red teaming
+
+  -Pre-deployment testing
+
+  -Regression checks
+
+  -Behavioral drift monitoring
+
+Author
+
+Cullen E. Mathews
+Independent AI Safety & Evaluation Engineer

@@ -97,7 +97,7 @@ Intended Use
 
   -Behavioral drift monitoring
 
-Author
+**Author**
 
 Cullen E. Mathews
 

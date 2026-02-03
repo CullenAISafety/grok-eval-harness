@@ -34,8 +34,7 @@ This harness makes those failures measurable, repeatable, and comparable across 
   
   -Behavioral reproducibility — repeatable failure detection
 
-**Features
-**
+**Features**
 Pluggable model backends (Grok + extensible adapters)
 
   -Structured logging

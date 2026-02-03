@@ -50,18 +50,22 @@ Pluggable model backends (Grok + extensible adapters)
 
 
 **QUICK START**
+
 git clone https://github.com/CullenAISafety/grok-eval-harness.git
 cd grok-eval-harness
 
 
 **INSTAL**
+
 pip install -r requirements.txt
 
 **RUN EXAMPLE**
+
 python run_harness.py --model <MODEL_NAME> --config configs/example.yaml
 
 
 **EXAMPLE OUTPUT**
+
 Session: 12
 Persona Drift Score: 0.42 (⚠ elevated)
 Instruction Violations: 3
@@ -69,6 +73,7 @@ Boundary Failures: 1
 Long-horizon instability detected after turn 37
 
 **ARCHITECTURE**
+
 Test Suites → Harness → Model Backend → Logs → Metrics → Reports
 
 The harness treats models as black-box systems and evaluates observable behavior without requiring internal access.
@@ -76,12 +81,14 @@ The harness treats models as black-box systems and evaluates observable behavior
 **Model Integration
 Grok**
 
+
 Requires authorized xAI API access:
 
 export XAI_API_KEY="your_api_key_here"
 python run_harness.py --model grok
 
 **Additional Models**
+
 
 Implement the interface in models/ and provide a configuration file. Backends are automatically detected.
 
